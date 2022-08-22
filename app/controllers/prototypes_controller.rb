@@ -13,9 +13,8 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.new(prototype_params)
 
     if @prototype.save
-      redirect_to root_path(@prototype)
+      redirect_to action: :index
     else
-      @prototype = @prototype.includes(:user)
       render :new
     end
   end
